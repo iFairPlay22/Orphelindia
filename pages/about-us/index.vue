@@ -13,52 +13,21 @@
       alignment="justify-start"
     />
 
-    <!-- Padding de 1 case / 12 -->
-    <v-row justify="center" align="center" class="pt-5">
-      <v-col :xl="10" :md="12" :cols="10">
-
-        <!-- Pour chaque block d'une certaine taille -->
-        <v-row justify="center" align="center">
-          <v-col v-for="({ title, text, img }, i) in objectivesPart.blocks" :key="i"  :md="4" :cols="12">
-            
-            <v-card 
-                :height="cardHeight">
-              <v-img
-                :src="img"
-                height="250px"
-              ></v-img>
-
-              <v-card-title v-text="title"/>
-              <v-card-subtitle v-text="text"/>
-            </v-card>
-
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
+    <List
+      :elements="objectivesPart.blocks"
+    />
   </div>
 </template>
 
 <script>
 import MastTitle from '@/components/common/MastTitle'
 import MastText from '@/components/common/MastText'
+import List from '@/components/list/List';
 
 export default {
     name: "AboutUs",
     head: { titleTemplate: '%s - About us' },
-    components: { MastTitle, MastText },
-    computed: {
-      cardHeight() {
-        console.log(this.$vuetify.breakpoint.name)
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return '';
-          case 'sm': return '';
-          case 'md': return 550;
-          case 'lg': return 475;
-          case 'xl': return 450;
-        }
-      }
-    },
+    components: { MastTitle, MastText, List },
     data () {
         return {
             descriptionPart: {

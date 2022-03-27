@@ -1,14 +1,14 @@
 <template>
     <v-row justify="center" align="center" >
-      <v-col cols="10" md="8">
+      <v-col :xl="10" :md="12" :cols="10">
         <v-card flat color="transparent">
           
-          <v-card-title :class="'display-2 d-flex ' + alignment" v-text="title"/>
+          <v-card-title :class="'custum-font-1 custum-title d-flex ' + alignment" v-text="title"/>
           
-          <v-card-subtitle v-if="keywords && keywords.length != 0" class="subtitle d-flex justify-center pt-1 text-uppercase">
+          <v-card-subtitle v-if="keywords && keywords.length != 0" class="custum-font-1 pt-3 subtitle d-flex justify-center pt-1 text-uppercase">
             <span v-for="(keyword, i) in keywords" :key="i" class="d-flex">
               <v-icon v-if="keyword == '.'">mdi-circle-small</v-icon>
-              <span v-else v-text="keyword"/>
+              <span v-else class="custum-font-1" v-text="keyword"/>
             </span>
           </v-card-subtitle>
 

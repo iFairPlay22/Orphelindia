@@ -5,7 +5,7 @@
       <MastHead/>
 
       <v-main>
-        <v-container class="py-5">
+        <v-container class="py-10">
           <Nuxt />
         </v-container>
       </v-main>
