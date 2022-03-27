@@ -72,7 +72,7 @@ export default {
                     size: { cols: "4" }
                 },
                 {
-                    title: "Orphenage in the world",
+                    title: "Around the world",
                     img: require("@/assets/images/home/orphenage.png"),
                     to: "/around-the-world",
                     size: { cols: "4" }

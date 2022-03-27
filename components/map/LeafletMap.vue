@@ -4,7 +4,7 @@
       cols="10"
       md="8"
       offset-md="1"
-      style="height: 60vw; max-height: 650px; min-height: 350px;"
+      style="height: 60vw; max-height: 650px; min-height: 450px;"
       class="ma-0 pt-10 pa-0"
     >
       <client-only>

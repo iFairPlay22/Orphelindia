@@ -35,7 +35,7 @@ export default {
                 blocks: [
                     { 
                         title : "Do some parties 🥳🎈",
-                        text: "At the beginning, we are just friends...",
+                        text: "At the beginning, we were just friends...",
                         img: require("@/assets/images/events/balloons.jpg"),
                     },
                     { 
@@ -49,13 +49,13 @@ export default {
                         img: require("@/assets/images/events/love.jpg"),
                     },
                     { 
-                        title : "Getting married 😋❤️",
+                        title : "Get married 😋❤️",
                         text: "Oops, Kaktus probably broke something ?",
                         img: require("@/assets/images/events/wedding.png"),
                     },
                     { 
                         title : "And probably more soon! 🙃",
-                        text: "Let time tell us...",
+                        text: "Let the time tell us...",
                         img: require("@/assets/images/events/wait.png"),
                     }                
                 ]
