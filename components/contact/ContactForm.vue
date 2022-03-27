@@ -159,7 +159,12 @@ export default {
       return values;
     },
     contactUs() {
-
+      this.$swal({
+        icon: "success",
+        title: "Message sent!",
+        text: "Thanks for your feedback 😊",
+        button: "OK"
+      });
     }
   },
 };
