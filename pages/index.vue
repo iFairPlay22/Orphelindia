@@ -5,7 +5,7 @@
 
     <!-- Padding de 1 case / 12 -->
     <v-row justify="center" align="center" >
-      <v-col :md="10" :sm="12" :cols="10">
+      <v-col :md="10" :xs="12">
 
         <!-- Pour chaque block d'une certaine taille -->
         <v-row justify="center" align="center">

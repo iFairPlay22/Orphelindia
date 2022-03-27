@@ -1,7 +1,7 @@
 <template>
   <!-- Padding de 1 case / 12 -->
     <v-row justify="center" align="center" class="pt-5">
-      <v-col xl="10" md="12" cols="10">
+      <v-col xl="10" md="12" sm="10" xs="12">
 
         <v-row justify="start" align="center" v-if="bigOne">
           <v-col offset-xl="6" xl="6" offset="0" cols="12">
@@ -33,7 +33,7 @@
           </v-col>
         </v-row>
 
-        <v-row justify="end">
+        <v-row justify="end" class="pt-" v-if="bigOne">
           <v-pagination
             class="mb-10"
             v-model="pagination.currentPage"
@@ -96,7 +96,7 @@ export default {
           case 'sm': return 'auto';
           case 'md': return this.calculateHeight(43, 63);
           case 'lg': return this.calculateHeight(37, 47);
-          case 'xl': return this.calculateHeight(48, 71);
+          case 'xl': return this.calculateHeight(48, 65);
         }
       },
       pagesNb() {

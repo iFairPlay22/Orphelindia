@@ -1,6 +1,6 @@
 <template>
     <v-row justify="center" align="center" >
-      <v-col :xl="10" :md="12" :cols="10">
+      <v-col sm="10" xs="12" class="px-0">
         <v-card flat color="transparent">
           
           <v-card-title :class="'custum-font-1 custum-title d-flex ' + alignment" v-text="title"/>

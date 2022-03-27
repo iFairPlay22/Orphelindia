@@ -41,7 +41,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'vue-sweetalert2/nuxt'
+    'vue-sweetalert2/nuxt',
+    'nuxt-leaflet'
   ],
   sweetalert: {
     confirmButtonColor: '#41b882',

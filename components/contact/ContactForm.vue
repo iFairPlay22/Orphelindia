@@ -2,13 +2,13 @@
   <v-row
     align="center"
   >
-    <v-col md="8" offset-md="2" cols="10" offset="1">
+    <v-col md="8" offset-md="2" sm="10" offset-sm="1" xs="12" offset-xs="0" class="px-0">
       <v-card color="transparent" flat light>
         <v-card-text class="pt-0">
           <v-form v-model="form.valid" ref="contactForm">
             <v-container>
               <v-row>
-                <v-col cols="12" sm="6" md="6">
+                <v-col cols="12" sm="6" md="6" class="px-0">
                   <v-text-field
                     required
                     :label="form.params.firstName.txt"
@@ -17,7 +17,7 @@
                     :counter="form.params.firstName.max"
                   />
                 </v-col>
-                <v-col cols="12" sm="6" md="6">
+                <v-col cols="12" sm="6" md="6" class="px-0">
                   <v-text-field
                     required
                     :label="form.params.lastName.txt"
@@ -26,7 +26,7 @@
                     :counter="form.params.lastName.max"
                   />
                 </v-col>
-                <v-col cols="12">
+                <v-col cols="12" class="px-0">
                   <v-text-field
                     required
                     :label="form.params.email.txt"
@@ -35,7 +35,7 @@
                     :counter="form.params.email.max"
                   />
                 </v-col>
-                <v-col cols="12">
+                <v-col cols="12" class="px-0">
                   <v-text-field
                     required
                     :label="form.params.title.txt"
@@ -44,7 +44,7 @@
                     :counter="form.params.title.max"
                   />
                 </v-col>
-                <v-col cols="12">
+                <v-col cols="12" class="px-0">
                   <v-textarea
                     required
                     auto-grow
@@ -63,7 +63,7 @@
             </v-container>
           </v-form>
         </v-card-text>
-        <v-card-actions class="mr-5">
+        <v-card-actions class="mr-2">
           <v-spacer></v-spacer>
 
           <v-btn dark class="pr-3 custum-normal-btn" @click="contactUs">

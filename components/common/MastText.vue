@@ -1,8 +1,8 @@
 <template>
     <v-row justify="center" align="center" >
-        <v-col xl="8" cols="10">
+        <v-col xl="8" sm="10" xs="12">
             <v-row justify="center" align="center">
-                <v-col>
+                <v-col class="px-0">
                     <v-card flat color="transparent">
                         <v-card-text v-text="text" class="text-justify"/>
                     </v-card>

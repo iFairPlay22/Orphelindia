@@ -1,9 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,800&display=swap');
 
-.custum-font-1 {
-  font-family: 'EB Garamond', serif !important;
+
+// TEXT ALIGN
+@media (min-width: 550px) {
+  #app {
+    text-align: center !important;
+  }
 }
 
-.custum-title {
-  font-size: 3rem !important; 
+@media (min-width: 551px) {
+  #app {
+    text-align: justify !important;
+  }
+}
+
+// FONT SIZE
+@media (min-width: 0px) and (max-width: 850px) {
+  .custum-title {
+   font-size: 2rem !important; 
+ }
+}
+
+@media (min-width: 851px) and (max-width: 1000px) {
+
+  .custum-title {
+    font-size: 2.5rem !important; 
+  }
+}
+
+@media (min-width: 1000px) {
+  .custum-title {
+    font-size: 3rem !important; 
+  }
+}
+
+#app, .custum-font-1 {
+  font-family: 'EB Garamond', serif !important;
 }
