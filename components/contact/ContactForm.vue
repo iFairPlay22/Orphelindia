@@ -133,7 +133,7 @@ export default {
             (v) =>
               (!!v && paramValue.min <= v.length) ||
               paramValue.txt +
-                " must be more than " +
+                " must contains more than " +
                 paramValue.min +
                 " characters."
           );
@@ -144,7 +144,7 @@ export default {
             (v) =>
               (!!v && v.length <= paramValue.max) ||
               paramValue.txt +
-              " must be less than " +
+              " must contains less than " +
               " characters."
           );
         }
@@ -159,10 +159,57 @@ export default {
       return values;
     },
     contactUs() {
+
+      this.$refs.contactForm.validate();
+      if (this.form.valid) {
+
+       const fetchBody = {
+        user_id: "0V6GamAUoqRFddizD",
+        service_id: "orphelindia_service",
+        template_id: "orphelindia_new_message",
+        template_params: { 
+          from_name: this.form.values.firstName + " " + this.form.values.lastName,
+          from_email: this.form.values.email,
+          object: this.form.values.title,
+          message: this.form.values.message,
+      }};
+
+      fetch("https://api.emailjs.com/api/v1.0/email/send", {
+          "headers": {
+              "Content-Type": "application/json",
+          },
+          "body": JSON.stringify(fetchBody),
+          "method": "POST",
+          "mode": "cors"
+      })
+          .then(response => response.text())
+          .then(response => {
+            if (response == "OK") {
+              this.onMessageSent();
+            } else {
+              this.onMessageNotSent();
+            }
+          })
+          // KO
+          .catch(error => {
+            this.onMessageNotSent();
+          });
+      }
+    },
+    onMessageSent() {
+      this.$refs.contactForm.reset();
       this.$swal({
         icon: "success",
         title: "Message sent!",
         text: "Thanks for your feedback 😊",
+        button: "OK"
+      });
+    },
+    onMessageNotSent() {
+      this.$swal({
+        icon: "error",
+        title: "Message not sent 😒",
+        text: "The message can't be sent at the moment. Please try again later.",
         button: "OK"
       });
     }

@@ -9,7 +9,10 @@
             alignment="justify-start"
         />
 
-      <List :elements="events.blocks" />
+      <List 
+            :elements="events.blocks"
+            :bigOne="true" 
+        />
   </div>
 </template>
 
@@ -38,17 +41,17 @@ export default {
                     { 
                         title : "Kiss your best friend 😘",
                         text: "But now, it's Dom's birthday...",
-                        img: require("@/assets/images/events/wedding.png"),
-                    },
-                    { 
-                        title : "Getting married 😋❤️",
-                        text: "Oops, Kaktus probably broke something ?",
                         img: require("@/assets/images/events/flower.png"),
                     },
                     { 
                         title : "Live your best moments 😎",
                         text: "I love you so muchhhh, and all bla bla bla...",
                         img: require("@/assets/images/events/love.jpg"),
+                    },
+                    { 
+                        title : "Getting married 😋❤️",
+                        text: "Oops, Kaktus probably broke something ?",
+                        img: require("@/assets/images/events/wedding.png"),
                     },
                     { 
                         title : "And probably more soon! 🙃",
