@@ -16,13 +16,6 @@ import ContactForm from '@/components/contact/ContactForm'
 export default {
     name: "ContactUs",
     head: { titleTemplate: '%s - Contact us' },
-    components: { MastTitle, MastText, ContactForm },
-    data () {
-        return {
-            firstPart: {
-              title: "Contact us! ✍️",
-            },
-        }
-    }
+    components: { MastTitle, MastText, ContactForm }
 }
 </script>

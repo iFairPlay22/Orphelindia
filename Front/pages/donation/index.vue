@@ -18,14 +18,6 @@ export default {
     name: "Donation",
     head: { titleTemplate: "%s - Donation" },
     components: { MastTitle, MastText },
-    data() {
-        return {
-            firstPart: {
-                title: "Work in progress... 👷",
-                text: "This page is still under construction. Please come back later."
-            },
-        };
-    }
 }
 </script>
 

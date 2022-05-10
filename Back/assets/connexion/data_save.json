@@ -1,0 +1,9 @@
+{
+    "readonly": {
+        "user" : "Jade",
+        "password" : "Jade@Orphelindia"
+    },
+    "editable": {
+        "tokens" : []
+    }
+}

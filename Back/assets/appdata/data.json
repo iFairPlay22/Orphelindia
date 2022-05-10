@@ -1,0 +1,559 @@
+{
+	"readonly":{
+	   "pages":{
+		  "home":{
+			 "mainTitle":{
+				"title":{
+				   "editableId":1
+				},
+				"keywords":[
+				   {
+					  "editableId":2
+				   },
+				   {
+					  "editableId":3
+				   },
+				   {
+					  "editableId":4
+				   },
+				   {
+					  "editableId":5
+				   },
+				   {
+					  "editableId":6
+				   }
+				]
+			 },
+			 "blocks":[
+				{
+				   "title":{
+					  "editableId":7
+				   },
+				   "img":"@/assets/images/home/about.png",
+				   "to":"/about-us",
+				   "size":{
+					  "cols":"5"
+				   }
+				},
+				{
+				   "title":{
+					  "editableId":8
+				   },
+				   "img":"@/assets/images/home/events.png",
+				   "to":"/events",
+				   "size":{
+					  "cols":"7"
+				   }
+				},
+				{
+				   "title":{
+					  "editableId":9
+				   },
+				   "img":"@/assets/images/home/contact.png",
+				   "to":"/contact-us",
+				   "size":{
+					  "cols":"4"
+				   }
+				},
+				{
+				   "title":{
+					  "editableId":10
+				   },
+				   "img":"@/assets/images/home/donation.png",
+				   "to":"/donation",
+				   "size":{
+					  "cols":"4"
+				   }
+				},
+				{
+				   "title":{
+					  "editableId":11
+				   },
+				   "img":"@/assets/images/home/orphenage.png",
+				   "to":"/around-the-world",
+				   "size":{
+					  "cols":"4"
+				   }
+				}
+			 ]
+		  },
+		  "events":{
+			 "firstPart":{
+				"title":{
+				   "editableId":12
+				},
+				"text":{
+				   "editableId":13
+				}
+			 },
+			 "events":{
+				"title":{
+				   "editableId":14
+				},
+				"blocks":[
+				   {
+					  "title":{
+						 "editableId":15
+					  },
+					  "text":{
+						 "editableId":16
+					  },
+					  "img":"@/assets/images/events/balloons.jpg"
+				   },
+				   {
+					  "title":{
+						 "editableId":17
+					  },
+					  "text":{
+						 "editableId":18
+					  },
+					  "img":"@/assets/images/events/flower.png"
+				   },
+				   {
+					  "title":{
+						 "editableId":19
+					  },
+					  "text":{
+						 "editableId":20
+					  },
+					  "img":"@/assets/images/events/love.jpg"
+				   },
+				   {
+					  "title":{
+						 "editableId":21
+					  },
+					  "text":{
+						 "editableId":22
+					  },
+					  "img":"@/assets/images/events/wedding.png"
+				   },
+				   {
+					  "title":{
+						 "editableId":23
+					  },
+					  "text":{
+						 "editableId":24
+					  },
+					  "img":"@/assets/images/events/wait.png"
+				   }
+				]
+			 }
+		  },
+		  "donation":{
+			 "firstPart":{
+				"title":{
+				   "editableId":25
+				},
+				"text":{
+				   "editableId":26
+				}
+			 }
+		  },
+		  "contact-us":{
+			 "firstPart":{
+				"title":{
+				   "editableId":27
+				}
+			 }
+		  },
+		  "around-the-world":{
+			 "descriptionPart":{
+				"title":{
+				   "editableId":28
+				}
+			 },
+			 "mapPart":{
+				"mapCenter":[
+				   -20.348404,
+				   57.552152
+				],
+				"locations":[
+				   {
+					  "coords":[
+						 -20.328404,
+						 57.552152
+					  ],
+					  "title":{
+						 "editableId":29
+					  },
+					  "shortDescription":{
+						 "editableId":30
+					  }
+				   },
+				   {
+					  "coords":[
+						 -20.448404,
+						 57.552152
+					  ],
+					  "title":{
+						 "editableId":31
+					  },
+					  "shortDescription":{
+						 "editableId":32
+					  }
+				   },
+				   {
+					  "coords":[
+						 -20.358404,
+						 57.452152
+					  ],
+					  "title":{
+						 "editableId":33
+					  },
+					  "shortDescription":{
+						 "editableId":34
+					  }
+				   }
+				]
+			 }
+		  },
+		  "about-us":{
+			 "descriptionPart":{
+				"title":{
+				   "editableId":35
+				},
+				"text":{
+				   "editableId":36
+				}
+			 },
+			 "objectivesPart":{
+				"title":{
+				   "editableId":37
+				},
+				"blocks":[
+				   {
+					  "title":{
+						 "editableId":38
+					  },
+					  "text":{
+						 "editableId":39
+					  },
+					  "img":"@/assets/images/about-us/first_step.png"
+				   },
+				   {
+					  "title":{
+						 "editableId":40
+					  },
+					  "text":{
+						 "editableId":41
+					  },
+					  "img":"@/assets/images/about-us/provide.png"
+				   },
+				   {
+					  "title":{
+						 "editableId":42
+					  },
+					  "text":{
+						 "editableId":43
+					  },
+					  "img":"@/assets/images/about-us/meet.png"
+				   }
+				]
+			 }
+		  }
+	   },
+	   "header":{
+		  "logo":"@/assets/logos/orphelindia.png",
+		  "title":{
+			 "editableId":44
+		  },
+		  "drawer":false,
+		  "links":[
+			 {
+				"to":"/",
+				"icon":"mdi-home",
+				"text":{
+				   "editableId":45
+				}
+			 },
+			 {
+				"to":"/about-us",
+				"icon":"mdi-information-outline",
+				"text":{
+				   "editableId":46
+				}
+			 },
+			 {
+				"to":"/events",
+				"icon":"mdi-calendar",
+				"text":{
+				   "editableId":47
+				}
+			 },
+			 {
+				"to":"/contact-us",
+				"icon":"mdi-email",
+				"text":{
+				   "editableId":48
+				}
+			 },
+			 {
+				"to":"/donation",
+				"icon":"mdi-currency-usd",
+				"text":{
+				   "editableId":49
+				}
+			 },
+			 {
+				"to":"/around-the-world",
+				"icon":"mdi-earth",
+				"text":{
+				   "editableId":50
+				}
+			 }
+		  ]
+	   }
+	},
+	"editable":[
+	   {
+		  "id":1,
+		  "en":"Orphelindia Association",
+		  "fr":"Association Orphelindia"
+	   },
+	   {
+		  "id":2,
+		  "en":"Study",
+		  "fr":"Etudes"
+	   },
+	   {
+		  "id":3,
+		  "en":".",
+		  "fr":"."
+	   },
+	   {
+		  "id":4,
+		  "en":"Help",
+		  "fr":"Aide"
+	   },
+	   {
+		  "id":5,
+		  "en":".",
+		  "fr":"."
+	   },
+	   {
+		  "id":6,
+		  "en":"World",
+		  "fr":"Monde"
+	   },
+	   {
+		  "id":7,
+		  "en":"About us",
+		  "fr":"A propos"
+	   },
+	   {
+		  "id":8,
+		  "en":"Orphelindia event",
+		  "fr":"Evenements"
+	   },
+	   {
+		  "id":9,
+		  "en":"Contact us",
+		  "fr":"Nous contacter"
+	   },
+	   {
+		  "id":10,
+		  "en":"Donations",
+		  "fr":"Dons"
+	   },
+	   {
+		  "id":11,
+		  "en":"Around the world",
+		  "fr":"Autour du monde"
+	   },
+	   {
+		  "id":12,
+		  "en":"Orphelindia Events ⌚",
+		  "fr":"Evements d'Orphelindia ⌚"
+	   },
+	   {
+		  "id":13,
+		  "en":"For us the notion of sharing during the collection of donations is very important, having been part of many associative clubs, the notion of sharing was not always present. We want donors, volunteers and active members to feel a connection with these children. That he can feel the fact that their actions for the association are paying off and serve an important cause. That they themselves are important for the future of these children. This is why we want to create events for collecting donations, to share this adventure together and that everyone can feel important within this family that is Orphelindia. Of course when the organization of events will be impossible in places we will find means through networks and online, also helped by product sales.",
+		  "fr":" Pour nous la notion de partage lors de la collecte de dons est très importante, ayant fait partie de nombreux clubs associatifs, la notion de partage n'était pas toujours présente. Nous voulons que les donateurs, les bénévoles et les membres actifs se sentent en lien avec ces enfants. Qu'il puisse ressentir le fait que leurs actions pour l'association portent leurs fruits et servent une cause importante. Qu'ils sont eux-mêmes importants pour l'avenir de ces enfants. C'est pourquoi nous voulons créer des événements pour collecter des dons, pour partager cette aventure ensemble et que chacun puisse se sentir important au sein de cette famille qu'est Orphelindia. Bien sûr, lorsque l'organisation d'événements sera impossible dans certains endroits, nous trouverons des moyens par le biais de réseaux et en ligne, également aidés par la vente de produits."
+	   },
+	   {
+		  "id":14,
+		  "en":"Main Events",
+		  "fr":"Pincipaux évenements"
+	   },
+	   {
+		  "id":15,
+		  "en":"Do some parties 🥳🎈",
+		  "fr":"Faire des soirées 🥳🎈"
+	   },
+	   {
+		  "id":16,
+		  "en":"At the beginning, we were just friends...",
+		  "fr":"Au début, nous n'étions qu'amis..."
+	   },
+	   {
+		  "id":17,
+		  "en":"Kiss your best friend 😘",
+		  "fr":"Embrasser ton meilleur ami 😘"
+	   },
+	   {
+		  "id":18,
+		  "en":"But now, it's Dom's birthday...",
+		  "fr":"Mais maintenant, c'est l'anniversaire de Dom..."
+	   },
+	   {
+		  "id":19,
+		  "en":"Live your best moments 😎",
+		  "fr":"Vivre nos meilleurs moments 😎"
+	   },
+	   {
+		  "id":20,
+		  "en":"I love you so muchhhh, and all bla bla bla...",
+		  "fr":"Je t'aime tellement, et tout le bla bla bla..."
+	   },
+	   {
+		  "id":21,
+		  "en":"Get married ? 😋❤️",
+		  "fr":"Se marrier ? 😋❤️"
+	   },
+	   {
+		  "id":22,
+		  "en":"Oops, Kaktus probably broke something ?",
+		  "fr":"Oops, Kaktus a probablement cassé qqch ?"
+	   },
+	   {
+		  "id":23,
+		  "en":"And probably more soon! 🙃",
+		  "fr":"Et probabllement bientôt plus ! 🙃"
+	   },
+	   {
+		  "id":24,
+		  "en":"Let the time tell us...",
+		  "fr":"Laissons le temps faire son effet..."
+	   },
+	   {
+		  "id":25,
+		  "en":"Work in progress... 👷",
+		  "fr":"En cours de développement... 👷"
+	   },
+	   {
+		  "id":26,
+		  "en":"This page is still under construction. Please come back later.",
+		  "fr":"La page est en cours de construction, réessayez plus tard !"
+	   },
+	   {
+		  "id":27,
+		  "en":"Contact us! ✍️",
+		  "fr":"Contactez nous! ✍️"
+	   },
+	   {
+		  "id":28,
+		  "en":"Orphelindia, around the world 🛫",
+		  "fr":"Orphelindia, autour du monde 🛫"
+	   },
+	   {
+		  "id":29,
+		  "en":"Lieu 1",
+		  "fr":"Place 1"
+	   },
+	   {
+		  "id":30,
+		  "en":"Hahhaha.",
+		  "fr":"Hahhaha."
+	   },
+	   {
+		  "id":31,
+		  "en":"Lieu 2",
+		  "fr":"Place 2"
+	   },
+	   {
+		  "id":32,
+		  "en":"Hahhaha.",
+		  "fr":"Hahhaha."
+	   },
+	   {
+		  "id":33,
+		  "en":"Place 3",
+		  "fr":"Lieu 3"
+	   },
+	   {
+		  "id":34,
+		  "en":"Hahhaha.",
+		  "fr":"Hahhaha."
+	   },
+	   {
+		  "id":35,
+		  "en":"Who are we? 😊",
+		  "fr":"Qui sommes nous ? 😊"
+	   },
+	   {
+		  "id":36,
+		  "en":"Orphelindia est une association loi 1901 qui vient en aide aux orphelins du Sri Lanka, de l'Inde et de l'île Maurice. L'idée de créer cette association remonte à plusieurs années. La cause des orphelins me tient particulièrement à cœur car mon père a lui-même été orphelin. Dès son enfance, il a dû apprendre rapidement à se débrouiller seul et manquer plusieurs années d'école par manque de moyens. Il me disait souvent que s'il avait eu quelqu'un pour le pousser à aller loin et à étudier longtemps, il aurait sûrement réussi encore mieux qu'aujourd'hui. Même si je suis fier de tout ce qu'il a accompli et du chemin qu'il a parcouru, j'ai pris ses paroles en considération. Alors, aujourd'hui, je veux être l'une des personnes qui poussera ces enfants à faire de leur mieux. Mais aussi une personne qui pourra leur donner le goût de l'école et de l'éducation, qui est, à mon avis, le pilier moteur de notre société. L'éducation est la chose la plus importante dans la vie d'un enfant, c'est une chance qui peut leur permettre de construire leur propre avenir.",
+		  "fr":"Evenements"
+	   },
+	   {
+		  "id":37,
+		  "en":"Our objectives 💪",
+		  "fr":"Nos objectifs 💪"
+	   },
+	   {
+		  "id":38,
+		  "en":"First step",
+		  "fr":"Première étape"
+	   },
+	   {
+		  "id":39,
+		  "en":"To create events that would allow us to collect donations that we will use to buy the necessary materials for the orphanage that we will help, according to their request.  We are currently working on the creation of a website on which it will be possible to find all the information about the association as well as photos of the orphanage in Sri Lanka. We also want to create a way to make an online donation.",
+		  "fr":" Créer des événements qui nous permettraient de récolter des dons que nous utiliserons pour acheter le matériel nécessaire à l'orphelinat que nous aiderons, selon leur demande.  Nous travaillons actuellement à la création d'un site internet sur lequel il sera possible de trouver toutes les informations sur l'association ainsi que des photos de l'orphelinat au Sri Lanka. Nous souhaitons également créer un moyen de faire un don en ligne"
+	   },
+	   {
+		  "id":40,
+		  "en":"Provide the necessary",
+		  "fr":"Distribuer le nécessaire"
+	   },
+	   {
+		  "id":41,
+		  "en":"To be able to buy the necessary materials (notebooks, books, tables, tables, etc.) and manage to have them delivered directly to Sri Lanka by buying on markets close to them, such as in India, for example, or to send them directly part of the donations collected by bank transfer (the other part will obviously be used to organise other events).",
+		  "fr":"Pouvoir acheter le matériel nécessaire (cahiers, livres, tables, tableaux, etc.) et se débrouiller pour les faire livrer directement au Sri Lanka en achetant sur les marchés proches, comme en Inde par exemple, ou leur envoyer directement une partie des dons collectés par virement bancaire (l'autre partie sera évidemment utilisée pour organiser d'autres événements)"
+	   },
+	   {
+		  "id":42,
+		  "en":"Meeting",
+		  "fr":"Rencontres"
+	   },
+	   {
+		  "id":43,
+		  "en":"To be able to go to Sri Lanka to see the help Orphelindia is giving in the orphanage, to see how we can continue to help them, and to meet the residents and spend time with them.",
+		  "fr":"Pouvoir aller au Sri Lanka pour voir l'aide qu'Orphelindia apporte à l'orphelinat, pour voir comment nous pouvons continuer à les aider, et pour rencontrer les résidents et passer du temps avec eux."
+	   },
+	   {
+		  "id":44,
+		  "en":"Orphelindia",
+		  "fr":"Orphelindia"
+	   },
+	   {
+		  "id":45,
+		  "en":"Home",
+		  "fr":"Acceuil"
+	   },
+	   {
+		  "id":46,
+		  "en":"About us",
+		  "fr":"A propos"
+	   },
+	   {
+		  "id":47,
+		  "en":"Events",
+		  "fr":"Evenements"
+	   },
+	   {
+		  "id":48,
+		  "en":"Contact us",
+		  "fr":"Contactez nous"
+	   },
+	   {
+		  "id":49,
+		  "en":"Donation",
+		  "fr":"Dons"
+	   },
+	   {
+		  "id":50,
+		  "en":"Around the world",
+		  "fr":"Autour du monde"
+	   }
+	]
+ }

@@ -44,46 +44,7 @@
 
 <script>
 export default {
-    name: "MastHead",
-    data() {
-        return {
-            logo : require("@/assets/logos/orphelindia.png"),
-            title: "Orphelindia",
-            drawer: false,
-            links: [
-              {
-                to: "/",
-                icon: "mdi-home",
-                text: "Home"
-              },
-              {
-                to: "/about-us",
-                icon: "mdi-information-outline",
-                text: "About us"
-              },
-              {
-                to: "/events",
-                icon: "mdi-calendar",
-                text: "Events"
-              },
-              {
-                to: "/contact-us",
-                icon: "mdi-email",
-                text: "Contact us"
-              },
-              {
-                to: "/donation",
-                icon: "mdi-currency-usd",
-                text: "Donation"
-              },
-              {
-                to: "/around-the-world",
-                icon: "mdi-earth",
-                text: "Around the world"
-              }
-            ],
-        };
-    },
+    name: "MastHead"
 }
 </script>
 
