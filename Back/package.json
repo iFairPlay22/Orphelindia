@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "./node_modules/.bin/netlify-lambda serve",
+    "build": "./node_modules/.bin/netlify-lambda build",
     "autoload": "nodemon ./bin/www"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "http-errors": "~1.6.3",
     "js-sha256": "^0.9.0",
     "morgan": "~1.9.1",
+    "netlify-lambda": "^2.0.15",
     "nodemon": "^2.0.16",
     "pug": "^3.0.2"
   }
