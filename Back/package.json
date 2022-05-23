@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda serve",
-    "build": "./node_modules/.bin/netlify-lambda build",
+    "start": "./node_modules/.bin/netlify-lambda serve .",
+    "build": "./node_modules/.bin/netlify-lambda build .",
     "autoload": "nodemon ./bin/www"
   },
   "dependencies": {
