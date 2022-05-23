@@ -8,19 +8,19 @@
           <v-form v-model="form.valid" ref="contactForm">
             <v-container>
               <v-row>
-                <v-col cols="12" sm="6" md="6" class="px-0">
+                <v-col cols="12" sm="6" md="6" class="pl-0 pr-1">
                   <v-text-field
                     required
-                    :label="form.params.firstName.txt"
+                    :label="form.params.firstName.txt[currentLanguage]"
                     v-model="form.values.firstName"
                     :rules="form.rules.firstName"
                     :counter="form.params.firstName.max"
                   />
                 </v-col>
-                <v-col cols="12" sm="6" md="6" class="px-0">
+                <v-col cols="12" sm="6" md="6" class="pl-1 pr-0">
                   <v-text-field
                     required
-                    :label="form.params.lastName.txt"
+                    :label="form.params.lastName.txt[currentLanguage]"
                     v-model="form.values.lastName"
                     :rules="form.rules.lastName"
                     :counter="form.params.lastName.max"
@@ -29,7 +29,7 @@
                 <v-col cols="12" class="px-0">
                   <v-text-field
                     required
-                    :label="form.params.email.txt"
+                    :label="form.params.email.txt[currentLanguage]"
                     v-model="form.values.email"
                     :rules="form.rules.email"
                     :counter="form.params.email.max"
@@ -38,7 +38,7 @@
                 <v-col cols="12" class="px-0">
                   <v-text-field
                     required
-                    :label="form.params.title.txt"
+                    :label="form.params.title.txt[currentLanguage]"
                     v-model="form.values.title"
                     :rules="form.rules.title"
                     :counter="form.params.title.max"
@@ -50,7 +50,7 @@
                     auto-grow
                     outlined
                     clearable
-                    :label="form.params.message.txt"
+                    :label="form.params.message.txt[currentLanguage]"
                     v-model="form.values.message"
                     :rules="form.rules.message"
                     :counter="form.params.message.max"
@@ -68,7 +68,12 @@
 
           <v-btn dark class="pr-3 custum-normal-btn" @click="contactUs">
             <v-icon left>mdi-pencil-outline</v-icon>
-            Send
+            <span class="custum-font-1">
+              <EditableText
+                :text="form.params.btn"
+                :inline="false"
+              />
+            </span>
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -77,54 +82,70 @@
 </template>
 
 <script>
+import EditableText from "@/components/text/EditableText"
+import { mapGetters, mapMutations, mapActions } from "vuex"
+
 export default {
   name: "ContactForm",
-  data() {
-    let params = {
+  components: { EditableText },
+  props: {
+    params: {
       firstName: {
-        txt: "First name",
-        min: 2,
-        max: 25,
+        txt: String,
+        min: Number,
+        max: Number,
+        required: true
       },
       lastName: {
-        txt: "Last name",
-        min: 2,
-        max: 25,
+        txt: String,
+        min: Number,
+        max: Number,
+        required: true
       },
       email: {
-        txt: "Email",
-        min: 5,
-        max: 25,
+        txt: String,
+        min: Number,
+        max: Number,
+        required: true
       },
       title: {
-        txt: "Object",
-        min: 2,
-        max: 50,
+        txt: String,
+        min: Number,
+        max: Number,
+        required: true
       },
       message: {
-        txt: "Message",
-        min: 10,
-        max: 255,
+        txt: String,
+        min: Number,
+        max: Number,
+        required: true
       },
-    };
-
-    return {
-      form: {
+      required: true
+    }
+  },
+  computed: {
+    form() {
+      return {
         valid: false,
-        params: params,
-        rules: this.getRules(params),
-        values: this.getValues(params),
-      },
-    };
+        params: this.params,
+        rules: this.getRules(this.params),
+        values: this.getValues(this.params),
+      }
+    },
+    ...mapGetters({
+      currentLanguage: "http/getCurrentLang"
+    })
   },
   methods: {
     getRules(params) {
+      if (!params) return {}
+
       let rules = {};
       for (const [paramName, paramValue] of Object.entries(params)) {
         rules[paramName] = [
           (v) =>
             !!v ||
-            paramValue.txt +
+            paramValue.txt[this.currentLanguage] +
               " is required",
         ];
 
@@ -132,7 +153,7 @@ export default {
           rules[paramName].push(
             (v) =>
               (!!v && paramValue.min <= v.length) ||
-              paramValue.txt +
+              paramValue.txt[this.currentLanguage] +
                 " must contains more than " +
                 paramValue.min +
                 " characters."
@@ -143,7 +164,7 @@ export default {
           rules[paramName].push(
             (v) =>
               (!!v && v.length <= paramValue.max) ||
-              paramValue.txt +
+              paramValue.txt[this.currentLanguage] +
               " must contains less than " +
               " characters."
           );
@@ -152,6 +173,8 @@ export default {
       return rules;
     },
     getValues(params) {
+      if (!params) return {}
+
       let values = {};
       for (const [paramName, paramValue] of Object.entries(params)) {
         values[paramName] = "";
@@ -159,29 +182,28 @@ export default {
       return values;
     },
     contactUs() {
-
       this.$refs.contactForm.validate();
       if (this.form.valid) {
 
-       const fetchBody = {
-        user_id: "0V6GamAUoqRFddizD",
-        service_id: "orphelindia_service",
-        template_id: "orphelindia_new_message",
-        template_params: { 
-          from_name: this.form.values.firstName + " " + this.form.values.lastName,
-          from_email: this.form.values.email,
-          object: this.form.values.title,
-          message: this.form.values.message,
-      }};
+        const fetchBody = {
+          user_id: "0V6GamAUoqRFddizD",
+          service_id: "orphelindia_service",
+          template_id: "orphelindia_new_message",
+          template_params: { 
+            from_name: this.form.values.firstName + " " + this.form.values.lastName,
+            from_email: this.form.values.email,
+            object: this.form.values.title,
+            message: this.form.values.message,
+        }};
 
-      fetch("https://api.emailjs.com/api/v1.0/email/send", {
-          "headers": {
-              "Content-Type": "application/json",
-          },
-          "body": JSON.stringify(fetchBody),
-          "method": "POST",
-          "mode": "cors"
-      })
+        fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            "headers": {
+                "Content-Type": "application/json",
+            },
+            "body": JSON.stringify(fetchBody),
+            "method": "POST",
+            "mode": "cors"
+        })
           .then(response => response.text())
           .then(response => {
             if (response == "OK") {

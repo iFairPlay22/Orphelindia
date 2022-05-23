@@ -29,7 +29,7 @@
 				   "title":{
 					  "editableId":7
 				   },
-				   "img":"@/assets/images/home/about.png",
+				   "img":"images/home/about.png",
 				   "to":"/about-us",
 				   "size":{
 					  "cols":"5"
@@ -39,7 +39,7 @@
 				   "title":{
 					  "editableId":8
 				   },
-				   "img":"@/assets/images/home/events.png",
+				   "img":"images/home/events.png",
 				   "to":"/events",
 				   "size":{
 					  "cols":"7"
@@ -49,7 +49,7 @@
 				   "title":{
 					  "editableId":9
 				   },
-				   "img":"@/assets/images/home/contact.png",
+				   "img":"images/home/contact.png",
 				   "to":"/contact-us",
 				   "size":{
 					  "cols":"4"
@@ -59,7 +59,7 @@
 				   "title":{
 					  "editableId":10
 				   },
-				   "img":"@/assets/images/home/donation.png",
+				   "img":"images/home/donation.png",
 				   "to":"/donation",
 				   "size":{
 					  "cols":"4"
@@ -69,7 +69,7 @@
 				   "title":{
 					  "editableId":11
 				   },
-				   "img":"@/assets/images/home/orphenage.png",
+				   "img":"images/home/orphenage.png",
 				   "to":"/around-the-world",
 				   "size":{
 					  "cols":"4"
@@ -98,7 +98,7 @@
 					  "text":{
 						 "editableId":16
 					  },
-					  "img":"@/assets/images/events/balloons.jpg"
+					  "img":"images/events/balloons.jpg"
 				   },
 				   {
 					  "title":{
@@ -107,7 +107,7 @@
 					  "text":{
 						 "editableId":18
 					  },
-					  "img":"@/assets/images/events/flower.png"
+					  "img":"images/events/flower.png"
 				   },
 				   {
 					  "title":{
@@ -116,7 +116,7 @@
 					  "text":{
 						 "editableId":20
 					  },
-					  "img":"@/assets/images/events/love.jpg"
+					  "img":"images/events/love.jpg"
 				   },
 				   {
 					  "title":{
@@ -125,7 +125,7 @@
 					  "text":{
 						 "editableId":22
 					  },
-					  "img":"@/assets/images/events/wedding.png"
+					  "img":"images/events/wedding.png"
 				   },
 				   {
 					  "title":{
@@ -134,7 +134,7 @@
 					  "text":{
 						 "editableId":24
 					  },
-					  "img":"@/assets/images/events/wait.png"
+					  "img":"images/events/wait.png"
 				   }
 				]
 			 }
@@ -154,7 +154,35 @@
 				"title":{
 				   "editableId":27
 				}
-			 }
+			 },
+			 "form": {
+				"firstName": {
+					"txt": { "editableId":51 },
+					"min": 2,
+					"max": 25
+				},
+				"lastName": {
+					"txt": { "editableId":52 },
+					"min": 2,
+					"max": 25
+				},
+				"email": {
+					"txt": { "editableId":53 },
+					"min": 5,
+					"max": 25
+				},
+				"title": {
+					"txt": { "editableId":54 },
+					"min": 2,
+					"max": 50
+				},
+				"message": {
+					"txt": { "editableId":55 },
+					"min": 10,
+					"max": 255
+				},
+				"btn": { "editableId":56 }
+			}	
 		  },
 		  "around-the-world":{
 			 "descriptionPart":{
@@ -228,7 +256,7 @@
 					  "text":{
 						 "editableId":39
 					  },
-					  "img":"@/assets/images/about-us/first_step.png"
+					  "img":"images/about-us/first_step.png"
 				   },
 				   {
 					  "title":{
@@ -237,7 +265,7 @@
 					  "text":{
 						 "editableId":41
 					  },
-					  "img":"@/assets/images/about-us/provide.png"
+					  "img":"images/about-us/provide.png"
 				   },
 				   {
 					  "title":{
@@ -246,14 +274,14 @@
 					  "text":{
 						 "editableId":43
 					  },
-					  "img":"@/assets/images/about-us/meet.png"
+					  "img":"images/about-us/meet.png"
 				   }
 				]
 			 }
 		  }
 	   },
 	   "header":{
-		  "logo":"@/assets/logos/orphelindia.png",
+		  "logo":"logos/orphelindia.png",
 		  "title":{
 			 "editableId":44
 		  },
@@ -302,6 +330,9 @@
 				}
 			 }
 		  ]
+	   },
+	   "footer": {
+		   "title" : { "editableId":57 }
 	   }
 	},
 	"editable":[
@@ -554,6 +585,41 @@
 		  "id":50,
 		  "en":"Around the world",
 		  "fr":"Autour du monde"
+	   },
+	   {
+		  "id":51,
+		  "en":"First name",
+		  "fr":"Prénom"
+	   },
+	   {
+		  "id":52,
+		  "en":"Last name",
+		  "fr":"Nom"
+	   },
+	   {
+		  "id":53,
+		  "en":"Email",
+		  "fr":"Mail"
+	   },
+	   {
+		  "id":54,
+		  "en":"Object",
+		  "fr":"Objet"
+	   },
+	   {
+		  "id":55,
+		  "en":"Message",
+		  "fr":"Message"
+	   },
+	   {
+		  "id":56,
+		  "en":"Send",
+		  "fr":"Envoyer"
+	   },
+	   {
+		  "id":57,
+		  "en":"Orphelindia",
+		  "fr":"Orphelindia"
 	   }
 	]
  }

@@ -4,6 +4,11 @@
 		"password": "b5942d2733fea7dc6fc3583fb1a311c8b963f9098412c37c44974be9eb022572"
 	},
 	"editable": {
-		"tokens": []
+		"tokens": [
+			{
+				"token": "b015eaa33d0da76b6d57a492916eccd3a72d1214b3faca12fb6599e5de8c84ab",
+				"time": 3600082
+			}
+		]
 	}
 }

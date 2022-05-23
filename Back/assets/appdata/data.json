@@ -29,7 +29,7 @@
 				   "title":{
 					  "editableId":7
 				   },
-				   "img":"@/assets/images/home/about.png",
+				   "img":"/resources/images/home/about.png",
 				   "to":"/about-us",
 				   "size":{
 					  "cols":"5"
@@ -39,7 +39,7 @@
 				   "title":{
 					  "editableId":8
 				   },
-				   "img":"@/assets/images/home/events.png",
+				   "img":"/resources/images/home/events.png",
 				   "to":"/events",
 				   "size":{
 					  "cols":"7"
@@ -49,7 +49,7 @@
 				   "title":{
 					  "editableId":9
 				   },
-				   "img":"@/assets/images/home/contact.png",
+				   "img":"/resources/images/home/contact.png",
 				   "to":"/contact-us",
 				   "size":{
 					  "cols":"4"
@@ -59,7 +59,7 @@
 				   "title":{
 					  "editableId":10
 				   },
-				   "img":"@/assets/images/home/donation.png",
+				   "img":"/resources/images/home/donation.png",
 				   "to":"/donation",
 				   "size":{
 					  "cols":"4"
@@ -69,7 +69,7 @@
 				   "title":{
 					  "editableId":11
 				   },
-				   "img":"@/assets/images/home/orphenage.png",
+				   "img":"/resources/images/home/orphenage.png",
 				   "to":"/around-the-world",
 				   "size":{
 					  "cols":"4"
@@ -98,7 +98,7 @@
 					  "text":{
 						 "editableId":16
 					  },
-					  "img":"@/assets/images/events/balloons.jpg"
+					  "img":"/resources/images/events/balloons.jpg"
 				   },
 				   {
 					  "title":{
@@ -107,7 +107,7 @@
 					  "text":{
 						 "editableId":18
 					  },
-					  "img":"@/assets/images/events/flower.png"
+					  "img":"/resources/images/events/flower.png"
 				   },
 				   {
 					  "title":{
@@ -116,7 +116,7 @@
 					  "text":{
 						 "editableId":20
 					  },
-					  "img":"@/assets/images/events/love.jpg"
+					  "img":"/resources/images/events/love.jpg"
 				   },
 				   {
 					  "title":{
@@ -125,7 +125,7 @@
 					  "text":{
 						 "editableId":22
 					  },
-					  "img":"@/assets/images/events/wedding.png"
+					  "img":"/resources/images/events/wedding.png"
 				   },
 				   {
 					  "title":{
@@ -134,7 +134,7 @@
 					  "text":{
 						 "editableId":24
 					  },
-					  "img":"@/assets/images/events/wait.png"
+					  "img":"/resources/images/events/wait.png"
 				   }
 				]
 			 }
@@ -154,7 +154,35 @@
 				"title":{
 				   "editableId":27
 				}
-			 }
+			 },
+			 "form": {
+				"firstName": {
+					"txt": { "editableId":51 },
+					"min": 2,
+					"max": 25
+				},
+				"lastName": {
+					"txt": { "editableId":52 },
+					"min": 2,
+					"max": 25
+				},
+				"email": {
+					"txt": { "editableId":53 },
+					"min": 5,
+					"max": 25
+				},
+				"title": {
+					"txt": { "editableId":54 },
+					"min": 2,
+					"max": 50
+				},
+				"message": {
+					"txt": { "editableId":55 },
+					"min": 10,
+					"max": 255
+				},
+				"btn": { "editableId":56 }
+			}	
 		  },
 		  "around-the-world":{
 			 "descriptionPart":{
@@ -228,7 +256,7 @@
 					  "text":{
 						 "editableId":39
 					  },
-					  "img":"@/assets/images/about-us/first_step.png"
+					  "img":"/resources/images/about-us/first_step.png"
 				   },
 				   {
 					  "title":{
@@ -237,7 +265,7 @@
 					  "text":{
 						 "editableId":41
 					  },
-					  "img":"@/assets/images/about-us/provide.png"
+					  "img":"/resources/images/about-us/provide.png"
 				   },
 				   {
 					  "title":{
@@ -246,14 +274,14 @@
 					  "text":{
 						 "editableId":43
 					  },
-					  "img":"@/assets/images/about-us/meet.png"
+					  "img":"/resources/images/about-us/meet.png"
 				   }
 				]
 			 }
 		  }
 	   },
 	   "header":{
-		  "logo":"@/assets/logos/orphelindia.png",
+		  "logo":"/resources/logos/orphelindia.png",
 		  "title":{
 			 "editableId":44
 		  },
@@ -302,6 +330,9 @@
 				}
 			 }
 		  ]
+	   },
+	   "footer": {
+		   "title" : { "editableId":57 }
 	   }
 	},
 	"editable":[
@@ -482,8 +513,8 @@
 	   },
 	   {
 		  "id":36,
-		  "en":"Orphelindia est une association loi 1901 qui vient en aide aux orphelins du Sri Lanka, de l'Inde et de l'île Maurice. L'idée de créer cette association remonte à plusieurs années. La cause des orphelins me tient particulièrement à cœur car mon père a lui-même été orphelin. Dès son enfance, il a dû apprendre rapidement à se débrouiller seul et manquer plusieurs années d'école par manque de moyens. Il me disait souvent que s'il avait eu quelqu'un pour le pousser à aller loin et à étudier longtemps, il aurait sûrement réussi encore mieux qu'aujourd'hui. Même si je suis fier de tout ce qu'il a accompli et du chemin qu'il a parcouru, j'ai pris ses paroles en considération. Alors, aujourd'hui, je veux être l'une des personnes qui poussera ces enfants à faire de leur mieux. Mais aussi une personne qui pourra leur donner le goût de l'école et de l'éducation, qui est, à mon avis, le pilier moteur de notre société. L'éducation est la chose la plus importante dans la vie d'un enfant, c'est une chance qui peut leur permettre de construire leur propre avenir.",
-		  "fr":"Evenements"
+		  "en":"Orphelindia is an association under the law of 1901 which helps orphans in Sri Lanka, India, and Mauritius. The idea of creating this association dates back several years. The orphan cause is particularly close to my heart because my father has been an orphan himself. since he was a child, he had to learn quickly to fend for himself and to miss several years of school for lack of means. He often told me that if he had had someone to push him to go far and study for a long time, he would surely have succeeded even better than he does today. Even though I am proud of everything he has achieved and the path he has taken, I took his words into consideration. So, today I want to be one of the people who will push these children to do their best. but also a person who can give them a taste for school and education, which is, in my opinion, the driving pillar of our society. Education is the most important thing in a child's life, it is a chance that can allow Them to build Their own future.",
+		  "fr":"Orphelindia est une association loi 1901 qui vient en aide aux orphelins du Sri Lanka, de l'Inde et de l'île Maurice. L'idée de créer cette association remonte à plusieurs années. La cause des orphelins me tient particulièrement à cœur car mon père a lui-même été orphelin. Dès son enfance, il a dû apprendre rapidement à se débrouiller seul et manquer plusieurs années d'école par manque de moyens. Il me disait souvent que s'il avait eu quelqu'un pour le pousser à aller loin et à étudier longtemps, il aurait sûrement réussi encore mieux qu'aujourd'hui. Même si je suis fier de tout ce qu'il a accompli et du chemin qu'il a parcouru, j'ai pris ses paroles en considération. Alors, aujourd'hui, je veux être l'une des personnes qui poussera ces enfants à faire de leur mieux. Mais aussi une personne qui pourra leur donner le goût de l'école et de l'éducation, qui est, à mon avis, le pilier moteur de notre société. L'éducation est la chose la plus importante dans la vie d'un enfant, c'est une chance qui peut leur permettre de construire leur propre avenir."
 	   },
 	   {
 		  "id":37,
@@ -554,6 +585,41 @@
 		  "id":50,
 		  "en":"Around the world",
 		  "fr":"Autour du monde"
+	   },
+	   {
+		  "id":51,
+		  "en":"First name",
+		  "fr":"Prénom"
+	   },
+	   {
+		  "id":52,
+		  "en":"Last name",
+		  "fr":"Nom"
+	   },
+	   {
+		  "id":53,
+		  "en":"Email",
+		  "fr":"Mail"
+	   },
+	   {
+		  "id":54,
+		  "en":"Object",
+		  "fr":"Objet"
+	   },
+	   {
+		  "id":55,
+		  "en":"Message",
+		  "fr":"Message"
+	   },
+	   {
+		  "id":56,
+		  "en":"Send",
+		  "fr":"Envoyer"
+	   },
+	   {
+		  "id":57,
+		  "en":"Orphelindia",
+		  "fr":"Orphelindia"
 	   }
 	]
  }

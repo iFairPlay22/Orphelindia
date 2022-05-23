@@ -22,12 +22,23 @@
                 :height="cardHeight"
             >
               <v-img
-                :src="img"
+                :src="baseUrl + img"
                 :height="imgHeight + 'px'"
               ></v-img>
 
-              <v-card-title v-text="title"/>
-              <v-card-subtitle v-text="text" class="pt-2 text-justify"/>
+              <v-card-title> 
+                <EditableText
+                    :text="title"
+                    :inline="false"
+                />
+              </v-card-title>
+
+              <v-card-subtitle class="pt-2 text-justify"> 
+                <EditableText
+                    :text="text"
+                    :inline="false"
+                />
+              </v-card-subtitle>
             </v-card>
 
           </v-col>
@@ -47,8 +58,13 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations, mapActions } from "vuex";
+
+import EditableText from "@/components/text/EditableText";
+
 export default {
     name: "List",
+    components: { EditableText },
     props: { 
         elements: {
             type: Array,
@@ -70,7 +86,7 @@ export default {
         if (this.form.search) {
           const search = this.form.search.toLowerCase();
           res = this.elements.filter(({ title, text }) => {
-            return title.toLowerCase().includes(search) || text.toLowerCase().includes(search);
+            return title[this.currentLanguage].toLowerCase().includes(search) || text[this.currentLanguage].toLowerCase().includes(search);
           });
         }
 
@@ -78,14 +94,11 @@ export default {
           const firstIndex = (this.pagination.currentPage - 1) * this.pagination.resultsByPage;
           const lastIndex = firstIndex + this.pagination.resultsByPage;
           res = res.slice(firstIndex, lastIndex);
-          console.log(firstIndex, lastIndex)
         }
 
         return res;
       },
       cardHeight() {
-
-        console.log(this.$vuetify.breakpoint.name)
 
         if (!this.elements || this.elements.length === 0) {
           return 'auto';
@@ -106,7 +119,11 @@ export default {
         }
 
         return Math.ceil(this.elements.length / this.pagination.resultsByPage)
-      }
+      },
+      ...mapGetters({
+        baseUrl: "http/getBaseUrl",
+        currentLanguage: "http/getCurrentLang"
+      })
     },
     data() {
       return {
@@ -129,17 +146,16 @@ export default {
 
           const totalPadding = 16*2;
           
-          const maxTitleCharacters = element.title.length;
+          const maxTitleCharacters = element.title[this.currentLanguage].length;
           const maxTitleLines = Math.ceil(maxTitleCharacters / minCharactersByTitleLine);
           const pixelsByTitleLine = 32;
 
-          const maxTextCharacters = element.text.length;
+          const maxTextCharacters = element.text[this.currentLanguage].length;
           const maxTextLines = Math.ceil(maxTextCharacters / minCharactersByTextLine);
           const pixelsByTextLine = 22;
 
           const maxPixelsRequired = pixelsForImage + totalPadding + (maxTitleLines * pixelsByTitleLine) + (maxTextLines * pixelsByTextLine);
           return maxPixelsRequired;
-
         }) 
 
         return Math.max(...sizes);        

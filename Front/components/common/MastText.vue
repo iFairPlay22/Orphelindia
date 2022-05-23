@@ -4,7 +4,12 @@
             <v-row justify="center" align="center">
                 <v-col class="px-0">
                     <v-card flat color="transparent">
-                        <v-card-text v-text="text" class="text-justify"/>
+                        <v-card-text class="text-justify">
+                            <EditableText
+                                :text="text"
+                                :inline="false"
+                            />
+                        </v-card-text>
                     </v-card>
                 </v-col>
             </v-row>
@@ -13,12 +18,16 @@
 </template>
 
 <script>
+import EditableText from "@/components/text/EditableText";
+
 export default {
     name: 'MastText',
+    components: { EditableText },
     props: { 
         text: {
-            type: String,
-            default: '',
+            id: Number,
+            fr: String,
+            en : String
         }
     }
 }

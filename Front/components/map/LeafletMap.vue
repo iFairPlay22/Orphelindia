@@ -24,8 +24,18 @@
           >
             <l-popup @click="onMarkerClick()">
               <div>
-                <h2 class="text-center" v-text="title"/>
-                <p class="text-justify" v-text="shortDescription"/>
+                <h2 class="text-center"> 
+                  <EditableText
+                      :text="title"
+                      :inline="false"
+                  />
+                </h2>
+                <p class="text-justify"> 
+                  <EditableText
+                      :text="shortDescription"
+                      :inline="false"
+                  />
+                </p>
               </div>
             </l-popup>
           </l-marker>
@@ -36,9 +46,11 @@
 </template>
 
 <script>
+import EditableText from "@/components/text/EditableText";
 
 export default {
   name: "LeafletMap",
+  components: { EditableText },
   props: { 
       locations: {
         type: Array,

@@ -8,7 +8,12 @@ function recursivelyUpdate(obj, dict) {
                 obj[property] = recursivelyUpdate(obj[property], dict);
             } else if (property == "editableId") {
                 let id = obj['editableId']
-                obj = dict[id];
+                for (let el of dict) {
+                    if (el["id"] == id) {
+                        obj = el;
+                        break;
+                    }
+                }
             }
         }
     }
@@ -29,6 +34,10 @@ module.exports = {
             ),
             header : recursivelyUpdate(
                 jsonData.readonly.header, 
+                jsonData.editable
+            ),
+            footer : recursivelyUpdate(
+                jsonData.readonly.footer, 
                 jsonData.editable
             )
         };    

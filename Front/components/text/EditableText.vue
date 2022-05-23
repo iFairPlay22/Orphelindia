@@ -1,7 +1,7 @@
 <template>
   <span
-    :class="inline ? 'd-inline' : 'd-block'"
-    :contenteditable="requireSuperAdmin ? isSuperAdmin : isAdmin"
+    :class="'.text ' +  (inline ? 'd-inline' : 'd-block')"
+    :contenteditable="isAdmin"
     @focus="focus"
     @blur="blur"
     v-html="formattedText"
@@ -16,22 +16,20 @@ export default {
   name: "EditableText",
   props: { 
       text : {
-        id: string,
-        en: string,
-        fr: string,
+        id: Number,
+        en: String,
+        fr: String,
       }, 
-      inline : string
+      inline : Boolean
   },
   computed: {
     ...mapGetters({
-      isAdmin: "http/isLoggedAsAdmin",
-      isSuperAdmin: "http/isLoggedAsSuperAdmin",
-      currentLanguage: "http/getCurrentLang",
-      appData: "http/getAppData"
+      isAdmin: "http/isAdmin",
+      currentLanguage: "http/getCurrentLang"
     }),
     formattedText() {
-      return this.text && this.text.string
-        ? this.text.string.slice().replace(/(?:\n)/g, "<br>")
+      return this.text && this.text[this.currentLanguage]
+        ?this.text[this.currentLanguage].slice().replace(/(?:\n)/g, "<br>")
         : "";
     },
   },
@@ -58,27 +56,24 @@ export default {
     modifyString(newText) {
       if (this.requireSuperAdmin ? this.isSuperAdmin : this.isAdmin)
         this.httpReq({
-          url: `admin/resx/modify/${this.text.id}`,
+          url: `api/admin/edit/string`,
           data: {
-            newText: newText,
+            stringId: this.text.id,
+            value: newText,
           },
           fetchCallback: (response) => {
             if (response === true) {
               this.$swal({
                 icon: "success",
-                title:
-                  this.appData.swalMessageTitleTextUpdateSuccess.string,
-                text:
-                  this.appData.swalMessageDescriptionTextUpdateSuccess.string,
+                title: "Success",
+                text: "Text updated successfully!",
                 button: "OK",
               });
             } else {
               this.$swal({
                 icon: "error",
-                title:
-                  this.appData.swalMessageTitleTextUpdateFailure.string,
-                text:
-                  this.appData.swalMessageDescriptionTextUpdateFailure.string,
+                title: "Error",
+                text: "Text not updated!",
                 button: "OK",
               });
             }
