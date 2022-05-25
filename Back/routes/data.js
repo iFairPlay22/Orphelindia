@@ -9,15 +9,18 @@ router.post('/admin/pages/:pageId', function(req, res, next) {
   res.json(rt);
 });
 
-/* POST connexion token */
-router.post('/connexion', function(req, res, next) {
+/* POST connection token */
+router.post('/connection', function(req, res, next) {
 
-  if (!("user" in req.body && "password" in req.body)) {
-    res.json("Bad arguments...");
+  if (!("pseudo" in req.body && "password" in req.body)) {
+    res.json({
+      valid: false,
+      data: "Bad arguments..."
+    });
     return;
   }
 
-  const rt = connexion.tryLogin(req.body.user, req.body.password);
+  const rt = connexion.tryLogin(req.body.pseudo, req.body.password);
   res.json(rt);
 });
 

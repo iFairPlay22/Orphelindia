@@ -4,7 +4,7 @@
       :title="pageData.page.firstPart.title"
     />
 
-    <ContactForm
+    <LoginForm
       :params="pageData.page.form"
     />
   </div>
@@ -15,12 +15,12 @@ import { mapGetters, mapMutations, mapActions } from "vuex";
 
 import MastTitle from '@/components/common/MastTitle'
 import MastText from '@/components/common/MastText'
-import ContactForm from '@/components/form/ContactForm'
+import LoginForm from '@/components/form/LoginForm'
 
 export default {
-    name: "ContactUs",
-    head: { titleTemplate: '%s - Contact us' },
-    components: { MastTitle, MastText, ContactForm },
+    name: "Login",
+    head: { titleTemplate: '%s - Login' },
+    components: { MastTitle, MastText, LoginForm },
     data() {
       return {
           pageData: null,
@@ -29,7 +29,7 @@ export default {
     mounted() {
       return this.httpReq({
         pageRequest: true,
-        url: `api/admin/pages/contact-us`,
+        url: `api/admin/pages/login`,
         fetchCallback: r => this.pageData = r
       })
     },

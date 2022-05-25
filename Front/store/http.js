@@ -6,7 +6,7 @@ export const state = () => ({
     },
     // HTTP
     http: {
-      baseUrl: "https://orphelindia-back.netlify.com", // "http://localhost:5000",
+      baseUrl:  "http://localhost:5000", // "https://orphelindia-back.netlify.com",
       token : null
     },
     // STORED DATA
@@ -52,6 +52,7 @@ export const state = () => ({
     },
     setToken(state, token) {
       state.http.token = token
+      console.log(token)
     },
     setStoredData(state, { header, footer }) {
       state.storedData = { header: header, footer: footer };
@@ -68,11 +69,7 @@ export const state = () => ({
       
       const fetchUrl = `${baseUrl}/${url}`;
   
-      let body = { lang : language, token : token };
-      if (data) {
-        for (const [key, value] of Object.entries(data))
-          body[key] = JSON.stringify(value).toString();
-      }
+      let body = { lang : language, token : token, ...data };
   
       const fetchObj = {
         method: "POST",

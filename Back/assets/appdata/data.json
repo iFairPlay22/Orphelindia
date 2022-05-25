@@ -278,6 +278,26 @@
 				   }
 				]
 			 }
+		  },
+		  "login": {
+			"firstPart":{
+			   "title":{
+				  "editableId":58
+			   }
+			},
+			"form": {
+			   "pseudo": {
+				   "txt": { "editableId":59 },
+				   "min": 2,
+				   "max": 25
+			   },
+			   "password": {
+				   "txt": { "editableId":60 },
+				   "min": 2,
+				   "max": 25
+			   },
+			   "btn": { "editableId":61 }
+		   }	
 		  }
 	   },
 	   "header":{
@@ -559,7 +579,7 @@
 	   {
 		  "id":45,
 		  "en":"Home",
-		  "fr":"Acceuil"
+		  "fr":"Accueil"
 	   },
 	   {
 		  "id":46,
@@ -620,6 +640,26 @@
 		  "id":57,
 		  "en":"Orphelindia",
 		  "fr":"Orphelindia"
+	   },
+	   {
+		  "id":58,
+		  "en":"Login",
+		  "fr":"Se connecter"
+	   },
+	   {
+		  "id":59,
+		  "en":"Pseudo",
+		  "fr":"Utilisateur"
+	   },
+	   {
+		  "id":60,
+		  "en":"Password",
+		  "fr":"Mot de passe"
+	   },
+	   {
+		  "id":61,
+		  "en":"Login",
+		  "fr":"Connexion"
 	   }
 	]
  }

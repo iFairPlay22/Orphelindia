@@ -38,10 +38,16 @@ module.exports = {
             // Store the token list
             jsonService.replaceJson(jsonService.JSON_CONNEXION_FILE_PATH, jsonData);
 
-            return token;
+            return {
+                valid: true,
+                data: token
+            };
         }
 
-        return "Invalid credentials...";
+        return {
+            valid: false,
+            data: "Invalid credentials..."            
+        };
     },
     tryToken(tokenToTest) {
 
