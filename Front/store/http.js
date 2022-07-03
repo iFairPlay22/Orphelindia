@@ -54,8 +54,8 @@ export const state = () => ({
       state.http.token = token
       console.log(token)
     },
-    setStoredData(state, { header, footer }) {
-      state.storedData = { header: header, footer: footer };
+    setStoredData(state, { header, footer, common }) {
+      state.storedData = { header: header, footer: footer, common : common };
     }
   };
   

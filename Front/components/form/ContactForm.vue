@@ -66,7 +66,7 @@
         <v-card-actions class="mr-2">
           <v-spacer></v-spacer>
 
-          <v-btn dark class="pr-3 custum-normal-btn" @click="contactUs">
+          <v-btn color="success" class="pr-3 custum-normal-btn" @click="contactUs">
             <v-icon left>mdi-pencil-outline</v-icon>
             <span class="custum-font-1">
               <EditableText

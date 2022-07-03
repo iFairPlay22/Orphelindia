@@ -1,20 +1,73 @@
 <template>
-  <span
-    :class="'.text ' +  (inline ? 'd-inline' : 'd-block')"
-    :contenteditable="isAdmin"
-    @focus="focus"
-    @blur="blur"
-    v-html="formattedText"
-  >
-  </span>
+  <div :class="'flex-row justify-space-between align-center ' + (inline ? 'd-inline-flex' : 'd-flex')">
+    <span class="text"> {{ newText }} </span>
+
+    <v-dialog
+      v-model="dialog"
+      max-width="600px"
+      v-if="isAdmin" 
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn 
+          class="ma-2"
+          v-bind="attrs"
+          v-on.stop="on"
+          fab
+          x-small
+        >
+          <v-icon light color="green">mdi-pencil</v-icon>
+        </v-btn>      
+      </template>
+
+      <v-card>
+        <v-card-title class="custum-font-1 custum-title pt-6">
+          {{ storedData.common.editableTitle[this.currentLanguage] }}
+        </v-card-title>
+        <v-card-text class="pb-0">
+          <v-container>
+            <v-row>
+              <v-col cols="12" class="pb-0 pt-5">
+                <v-textarea 
+                  outlined
+                  auto-grow
+                  rows="4"
+                  row-height="30"
+                  shaped
+                  class="custum-font-1" 
+                  :label="storedData.common.editableTextLabel[this.currentLanguage]" 
+                  required 
+                  v-model="newText"
+                />
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions class="pt-0">
+          <v-spacer></v-spacer>
+          <v-btn
+            :class="stringsDiverged ? 'disabled' : 'success'"
+            text
+            @click="updateStrings"
+            :disabled="stringsDiverged"
+          >
+          {{ storedData.common.editableEditButton[this.currentLanguage] }}
+            <v-icon right>mdi-pencil</v-icon>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations, mapActions } from "vuex";
 
+import EditableText from "@/components/text/EditableText";
+
 export default {
   name: "EditableText",
-  props: { 
+  components: { EditableText },
+  props: {
       text : {
         id: Number,
         en: String,
@@ -25,36 +78,33 @@ export default {
   computed: {
     ...mapGetters({
       isAdmin: "http/isAdmin",
-      currentLanguage: "http/getCurrentLang"
+      currentLanguage: "http/getCurrentLang",
+      storedData: "http/getStoredData"
     }),
-    formattedText() {
-      return this.text && this.text[this.currentLanguage]
-        ?this.text[this.currentLanguage].slice().replace(/(?:\n)/g, "<br>")
-        : "";
+    stringsDiverged() {
+      return this.oldText == this.newText
     },
   },
   data() {
     return {
+      dialog: false,
       oldText: "",
+      newText: ""
     };
   },
+  mounted() {
+    if (this.text && this.text[this.currentLanguage]) {
+      this.oldText = this.text[this.currentLanguage];
+      this.newText = this.oldText;
+    }
+  },
   methods: {
-    getText(e) {
-      return e.target.innerHTML;
-    },
-    focus(e) {
-      this.oldText = this.getText(e);
-    },
-    blur(e) {
-      const oldText = this.oldText;
-      const newText = this.getText(e);
+    updateStrings() {
 
-      if (oldText != newText) {
-        this.modifyString(newText);
-      }
-    },
-    modifyString(newText) {
-      if (this.requireSuperAdmin ? this.isSuperAdmin : this.isAdmin)
+      if (this.stringsDiverged) return ;
+      const newText = this.newText;
+
+      if (this.isAdmin)
         this.httpReq({
           url: `api/admin/edit/string`,
           data: {
@@ -69,6 +119,7 @@ export default {
                 text: "Text updated successfully!",
                 button: "OK",
               });
+              this.oldText = this.newText;
             } else {
               this.$swal({
                 icon: "error",
@@ -79,6 +130,8 @@ export default {
             }
           },
         });
+
+        this.dialog = false;
     },
     ...mapActions({
       httpReq: "http/httpReq",

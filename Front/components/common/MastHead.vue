@@ -4,20 +4,22 @@
       fixed
       app
     >
-      <v-card to="/" flat color="transparent" class="d-flex pa-2 rounded">
-        <v-img
-          :src="baseUrl + headerData.logo"
-          cover
-          max-width="30px"
-          max-height="30px"
-        />
-        <v-toolbar-title class="pl-2 text-decoration-underline">
-          <EditableText
-            :text="headerData.title"
-            :inline="false"
+      <v-btn text @click="$router.push('/')">
+        <div class="d-flex flex-row justify-around align-center">
+          <v-img
+            :src="baseUrl + headerData.logo"
+            cover
+            max-width="30px"
+            max-height="30px"
           />
-        </v-toolbar-title>
-      </v-card>
+          <div class="pl-2 custum-font-1 custum-bar-title">
+            <EditableText
+              :text="headerData.title"
+              :inline="false"
+            />
+          </div>
+        </div>
+      </v-btn>
 
       <v-spacer />
 
@@ -35,14 +37,14 @@
         dense
       >
         <v-list-item-group>
-          <v-list-item v-for="({ icon, text, to }, i) in headerData.links" :key="i" :to="to">
+          <v-list-item v-for="({ icon, text, to }, i) in headerData.links" :key="i" @click="$router.push(to)">
             <v-list-item-icon class="mr-2">
               <v-icon>{{ icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-title class="pa-0 ma-0"> 
               <EditableText
                 :text="text"
-                :inline="true"
+                :inline="false"
               />
             </v-list-item-title>
           </v-list-item>

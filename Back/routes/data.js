@@ -26,8 +26,8 @@ router.post('/connection', function(req, res, next) {
 
 /* POST page data. */
 router.post('/admin/edit/string', function(req, res, next) {
-
-  if (!("token" in req.body && "stringId" in req.body && "langId" in req.body && "value" in req.body)) {
+  
+  if (!("token" in req.body && "stringId" in req.body && "lang" in req.body && "value" in req.body)) {
     res.json("Bad arguments...");
     return;
   }
@@ -37,7 +37,7 @@ router.post('/admin/edit/string', function(req, res, next) {
     return;
   }
   
-  const rt = datappdataa.updatePageData(req.body.stringId, req.body.langId, req.body.value);
+  const rt = appdata.updatePageData(req.body.stringId, req.body.lang, req.body.value);
   res.json(rt);
 });
 

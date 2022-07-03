@@ -37,7 +37,7 @@
         <v-card-actions class="mr-2">
           <v-spacer></v-spacer>
 
-          <v-btn dark class="pr-3 custum-normal-btn" @click="tryLogin">
+          <v-btn color="success" class="pr-3 custum-normal-btn" @click="tryLogin">
             <v-icon left>mdi-pencil-outline</v-icon>
             <span class="custum-font-1">
               <EditableText
@@ -168,6 +168,8 @@ export default {
         title: "Logged!",
         text: "Logged as admin 😊",
         button: "OK"
+      }).then(() => {
+        this.$router.push("/");
       });
     },
     onMessageNotSent() {

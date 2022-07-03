@@ -26,14 +26,14 @@
                 :height="imgHeight + 'px'"
               ></v-img>
 
-              <v-card-title> 
+              <v-card-title :class="!isAdmin ? 'pt-2' : 'py-0'"> 
                 <EditableText
                     :text="title"
                     :inline="false"
                 />
               </v-card-title>
 
-              <v-card-subtitle class="pt-2 text-justify"> 
+              <v-card-subtitle :class="(!isAdmin ? 'pt-2 pb-1' : 'py-1') + ' text-justify'"> 
                 <EditableText
                     :text="text"
                     :inline="false"
@@ -121,6 +121,7 @@ export default {
         return Math.ceil(this.elements.length / this.pagination.resultsByPage)
       },
       ...mapGetters({
+        isAdmin: "http/isAdmin",
         baseUrl: "http/getBaseUrl",
         currentLanguage: "http/getCurrentLang"
       })

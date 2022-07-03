@@ -39,7 +39,11 @@ module.exports = {
             footer : recursivelyUpdate(
                 jsonData.readonly.footer, 
                 jsonData.editable
-            )
+            ),
+            common : recursivelyUpdate(
+                jsonData.readonly.common, 
+                jsonData.editable
+            ),
         };    
     },
 
