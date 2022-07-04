@@ -1,24 +1,19 @@
 <template>
   <div :class="'flex-row justify-space-between align-center ' + (inline ? 'd-inline-flex' : 'd-flex')">
     <span class="text"> {{ newText }} </span>
-
+    <v-btn 
+      class="ma-2"
+      @click.stop="dialog = true"
+      fab
+      x-small
+    >
+      <v-icon light color="green">mdi-pencil</v-icon>
+    </v-btn>   
     <v-dialog
       v-model="dialog"
       max-width="600px"
       v-if="isAdmin" 
     >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn 
-          class="ma-2"
-          v-bind="attrs"
-          @click.stop="on"
-          fab
-          x-small
-        >
-          <v-icon light color="green">mdi-pencil</v-icon>
-        </v-btn>      
-      </template>
-
       <v-card>
         <v-card-title class="custum-font-1 custum-title pt-6">
           {{ storedData.common.editableTitle[this.currentLanguage] }}
