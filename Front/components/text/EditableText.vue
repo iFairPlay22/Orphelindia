@@ -6,13 +6,13 @@
       @click.stop="dialog = true"
       fab
       x-small
+      v-if="isAdmin" 
     >
       <v-icon light color="green">mdi-pencil</v-icon>
     </v-btn>   
     <v-dialog
       v-model="dialog"
       max-width="600px"
-      v-if="isAdmin" 
     >
       <v-card>
         <v-card-title class="custum-font-1 custum-title pt-6">
