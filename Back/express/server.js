@@ -22,8 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Route setup
-app.use('/', dataRouter);
-// app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+app.use('/.netlify/functions/server', dataRouter);
+app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports = app;
 module.exports.handler = serverless(app);
