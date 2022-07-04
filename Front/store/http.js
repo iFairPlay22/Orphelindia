@@ -6,7 +6,7 @@ export const state = () => ({
     },
     // HTTP
     http: {
-      baseUrl:  "http://localhost:5000", // "https://orphelindia-back.netlify.com",
+      baseUrl: process.env.NODE_ENV == "production" ? "https://orphelindia-back.herokuapp.com" : "http://localhost:5000",
       token : null
     },
     // STORED DATA
