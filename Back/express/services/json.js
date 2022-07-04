@@ -15,7 +15,5 @@ module.exports = {
         const jsonData = JSON.stringify(obj, null, "\t");
         fs.writeFileSync(path, jsonData);
     }
-    
-    
 
 }

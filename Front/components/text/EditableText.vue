@@ -11,7 +11,7 @@
         <v-btn 
           class="ma-2"
           v-bind="attrs"
-          v-on.stop="on"
+          @click.stop="on"
           fab
           x-small
         >
