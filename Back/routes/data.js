@@ -1,23 +1,16 @@
 var express = require('express');
+var router = express.Router();
 var appdata = require('../services/appdata.js');
 var connexion = require('../services/connexion.js');
 
-/* Create express router instance */
-var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Orphelindia' });
-});
-
 /* POST page data. */
-router.post('/api/admin/pages/:pageId', function(req, res, next) {
+router.post('/admin/pages/:pageId', function(req, res, next) {
   const rt = appdata.getPageData(req.params.pageId);
   res.json(rt);
 });
 
 /* POST connection token */
-router.post('/api/connection', function(req, res, next) {
+router.post('/connection', function(req, res, next) {
 
   if (!("pseudo" in req.body && "password" in req.body)) {
     res.json({
@@ -32,7 +25,7 @@ router.post('/api/connection', function(req, res, next) {
 });
 
 /* POST page data. */
-router.post('/api/admin/edit/string', function(req, res, next) {
+router.post('/admin/edit/string', function(req, res, next) {
   
   if (!("token" in req.body && "stringId" in req.body && "lang" in req.body && "value" in req.body)) {
     res.json("Bad arguments...");

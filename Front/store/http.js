@@ -79,10 +79,7 @@ export const state = () => ({
       };
   
       fetch(fetchUrl, fetchObj)
-        .then(response => {
-          console.log(response)
-          return response.json()
-        })
+        .then(response => response.json())
         .then(response => {
             if (pageRequest) context.commit("setStoredData", response);
             if (fetchCallback) fetchCallback(response)
